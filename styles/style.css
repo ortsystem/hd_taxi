@@ -297,6 +297,564 @@
             padding: 8rem 3rem;
         }
 
+        /* ============================================
+   APP SECTION STYLES
+   ============================================ */
+
+#app {
+    padding: 8rem 3rem;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#app::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.app-showcase {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+}
+
+/* App Content Styles */
+.app-content {
+    padding-right: 2rem;
+}
+
+.app-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--dourado-taxi), #b8960c);
+    color: var(--preto-taxi);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+    animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+    }
+}
+
+.app-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.3;
+}
+
+.app-content h3::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--dourado-taxi), transparent);
+    margin-top: 1rem;
+}
+
+.app-content > p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* App Features List */
+.app-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+}
+
+.app-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.app-feature:hover {
+    transform: translateX(5px);
+}
+
+.app-feature i {
+    color: var(--dourado-taxi);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.app-feature span {
+    color: #e0e0e0;
+}
+
+/* App CTA Form */
+.app-cta {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.app-cta p {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.app-cta p i {
+    color: var(--dourado-taxi);
+    margin-right: 0.5rem;
+}
+
+.app-notify-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.app-notify-form input {
+    flex: 1;
+    padding: 1rem 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.app-notify-form input:focus {
+    outline: none;
+    border-color: var(--dourado-taxi);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.app-notify-form input::placeholder {
+    color: #888888;
+}
+
+.app-notify-form button {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--dourado-taxi), #b8960c);
+    border: none;
+    border-radius: 8px;
+    color: var(--preto-taxi);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.app-notify-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Phone Mockup Styles */
+.app-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-mockup {
+    width: 320px;
+    height: 650px;
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+    border-radius: 40px;
+    padding: 12px;
+    position: relative;
+    box-shadow: 
+        0 30px 40px -20px rgba(0,0,0,0.8),
+        0 0 0 8px #333,
+        0 0 0 12px #222;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease;
+}
+
+.phone-mockup:hover {
+    transform: translateY(-10px) rotate(2deg);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(165deg, #1e1e1e, #2d2d2d);
+    border-radius: 32px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+}
+
+/* App Interface Simulation */
+.app-interface {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.app-header {
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.app-logo {
+    color: var(--dourado-taxi);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.app-logo::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--dourado-taxi);
+}
+
+.app-battery {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* App Map Simulation */
+.app-map {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(145deg, #233a4a, #1a2c38);
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.app-map::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(#00aaff10 1px, transparent 1px),
+        linear-gradient(90deg, #00aaff10 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.app-map i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: rgba(212, 175, 55, 0.3);
+    z-index: 1;
+}
+
+.map-pin {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+    z-index: 2;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.map-route {
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 40%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--dourado-taxi), #00aaff);
+    transform: rotate(45deg);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.map-route::before {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: -4px;
+    width: 10px;
+    height: 10px;
+    background: #00aaff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+/* App Booking Card */
+.app-booking-card {
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(10px);
+    margin: 10px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideUp 0.5s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.car-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--dourado-taxi), #b8960c);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--preto-taxi);
+    font-size: 1.5rem;
+}
+
+.booking-details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.car-name {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.eta {
+    color: var(--dourado-taxi);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.eta::after {
+    content: 'min';
+    font-size: 0.7rem;
+    font-weight: normal;
+    margin-left: 2px;
+    color: #888;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .app-showcase {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .app-content {
+        padding-right: 0;
+        order: 2;
+    }
+
+    .app-mockup {
+        order: 1;
+    }
+
+    .app-content h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding: 5rem 1.5rem;
+    }
+
+    .app-features {
+        grid-template-columns: 1fr;
+    }
+
+    .app-notify-form {
+        flex-direction: column;
+    }
+
+    .app-notify-form button {
+        width: 100%;
+    }
+
+    .phone-mockup {
+        width: 280px;
+        height: 570px;
+    }
+
+    .app-content h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-mockup {
+        width: 240px;
+        height: 490px;
+        border-width: 6px;
+    }
+
+    .app-badge {
+        font-size: 0.8rem;
+    }
+
+    .app-content h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Additional Animations */
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background: #222;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.app-feature i.fa-check-circle {
+    animation: checkSpin 0.5s ease;
+}
+
+@keyframes checkSpin {
+    0% {
+        transform: scale(0) rotate(-180deg);
+    }
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+/* Hover Effects */
+.app-feature:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Success Message for Notify Form */
+.notify-success {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid #4CAF50;
+    color: #4CAF50;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Glow Effect for Premium Feel */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--dourado-taxi), transparent, var(--dourado-taxi));
+    border-radius: 44px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+}
+
+.phone-mockup:hover::before {
+    opacity: 0.3;
+}
+
+/* Scroll Reveal Animation for App Section */
+#app .reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#app .reveal.active {
+    animation: appReveal 1s ease forwards;
+}
+
+@keyframes appReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
